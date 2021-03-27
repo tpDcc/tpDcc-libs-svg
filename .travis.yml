@@ -12,7 +12,8 @@ install:
 - pip install -r requirements.txt
 - python setup.py install
 script:
-- find . -name \*.py -exec pycodestyle --exclude */externals/* --max-line-length=120 --ignore=E402 {} +
+- find . -name \*.py -exec pycodestyle --exclude */externals/* --max-line-length=120
+  --ignore=E402 {} +
 - pytest --cov=tpDcc
 - sphinx-apidoc -f -e -o docs/sphinx tpDcc
 - sphinx-build -M html ./docs/sphinx ./
@@ -31,7 +32,7 @@ deploy:
     skip_cleanup: true
     user: tpoveda
     password:
-      secure: lr2sR4pyxUeQqVCiC8ENDUvTGd2Xu4GQ5IPEfNpY0a8J6fq8KcqNpA5nnfmdCdA2LpxyHBv4xxShhpAKbq2v28bB7lQ/UQ/tG4t0o011JBdZpw74+PcFkFHeZkcSF0Hhb0tDamg1+bUYZ4kQ2lPV+tvf278ev/LfrttLQZbPaJW5U+fv/EQ82NNaAW1j/s9C5bnpZa9ljHpriZfx3tJlAjDdiTvB8dorFS1DZ87RltpFp8BfQ6AQPkdq0Hf79wmplYTu8BUbzKEVfPRqB3xhjRNuZaqs6MD2LaLwIjmmkrMC0nInMwTVeOUq4bGe8etC3oSxmEapEC5yNz+IyZHj4Ieqo8slmkGp6luRygo2HIQzzC1AYPxdc4XciUQlF1A5cyZIRTlfc/JZjQVdqXMw5e0XBQWYgNB71vR+C3JiJnag1J8DCnegufPO7LpkNfHtXRAhoZjn7h6ghZao7yhmSv2iYn23D2aDi0lQjKIgiZZQG7xY60i1iMRY2TvDJlTcZL7qkAQ67j59ATZ5yHm77K8f5q9WuwcNCSKqDScZgqovaJKGMpfRSRf2wEPkCRRy8MEyacC/92PuXdt25IFBctodyeQoG0MLe61ZUWHTTAPRmAcydvbCcobeylcTyQgaw1t5oHTqBDWpIkwIqt5KX4rszpDbdFuYVxd7x1AIexQ=
+      secure: ObWQabBnxVcd8IXH/KiJrk5VQb+4T3CU3vlWWgF3s5eqVtzb2Vn6XYheX6kq4KKvHll4svcCgbXrzMgPXFzNhUzmifoMuQ/l8+TIcAvFpE6B3Rj2NW1yO18h1bmkekgkBmq0f4Ea4HjhKGFxBUlJjwzWjlKT7imMYBFNbcJ8i8AisfAPbZIg/eduYKOngF4lRylQ96ucvZc+PLuq+UgB2WxL1DuIgGyxa5h9MOx3iGjVQIYJOiOXC0UgjM2KnJd3+LHyUVDa2yfZtvJgaSIFxGyCP/G6lSwSK23NmOakdb6gBZh+xZyt1i81GMtTkkP9Zs2+VwDFsObi9N2SFzNCym3fMAAMJgIVkI8HYJC6J0PFHyMRjT4oHznEZc+dn2bNHx6srq9eUyTwCSb8F05011iHTZmgBqAP3Cpg9LliP8OoRrB/fUDtBexz5yrdbGpqCDARomcBF1TOIhHDNE2Jj6rd3gO8Wah1A3DiPSZI2cGqdFwXijyFSLqIpz6DSWQ3eZ1/UsWmFeYVaJDVIwWyjLZkvF8JPedXHDrZwII/giM1HCkkTXZ68wasqyQUURbjRs9g5mB8OBYewaol4uagMg5hkq3TArtoBd8mnaTR/1uy4NrFEIgoHf6ys7eGhNVgDk21UWPp0Bge9/5fNSJmRiOLO7Ru6muiYsiPJCwRL14=
     on:
       branch: master
       tags: true
